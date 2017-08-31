@@ -1,0 +1,166 @@
+% LaTeX framework based on Constantinos Michael's at
+% http://www.constantinos.us/blog/2006/04/12/latex-resume-template 
+
+% TODO: 
+%    all the hardcoded spacing is lazy. fix this.
+
+% Change to 10pt if it gets too long
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+% For the footer
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{hyperref}
+\usepackage[normalem]{ulem}
+\usepackage{setspace}
+
+\setlength{\voffset}{-0.20in}
+\setlength{\textheight}{710pt}
+
+% \textheight=10in
+\pagestyle{empty}
+%\raggedbottom
+\raggedright
+
+% DEFINITIONS FOR RESUME
+\newcommand{\area}[2]{\vspace*{-14pt}\begin{verse}\textbf{#1}   #2 \end{verse}
+  \vspace*{-4pt}}
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-18pt} \hrulefill \\}
+\newcommand{\header}[1]{
+  {\hspace*{-15pt}\vspace*{6pt} \textsc{#1}} \vspace*{-6pt} \lineunder
+}
+\newcommand{\fillpullright}[1]{\hfill \hfill \textcolor{Gray}{(#1)}}
+\newcommand{\employer}[4]{{ \textbf{#1} #2 \fillpullright{#4}\\
+    \textit{\fontsize{11}{12}\selectfont #3}\\  }}
+\newcommand{\contact}[2]{
+\vspace*{-8pt}
+\begin{center}
+{\LARGE \scshape {#1}}\\
+#2
+\end{center}
+\vspace*{-8pt}
+}
+\newenvironment{achievements}{
+%%    \linespread{0.2}
+  \begin{list}{$\bullet$}{\topsep 0pt \itemsep -4pt}
+}{
+  \vspace*{2pt}\end{list}
+}
+\newcommand{\schoolwithcourses}[5]{
+  \textbf{#1} #2 $\cdot$ #3 #4 \fillpullright{#5}\\
+  \vspace*{4pt}
+}
+\newcommand{\school}[3]{
+  \textbf{#1} #2 \fillpullright{#3}\\
+  \vspace*{4pt}
+}
+\newcommand{\link}[2]{\underline{\href{#1}{#2}}}
+\newcommand{\mailto}[1]{\href{mailto:#1}{#1}}
+\newcommand{\reference}[4]{
+  #1 & #2 & #3 & \textit{\mailto{#4}}\\
+}
+
+%% Color the links (pink?)
+%% TODO: Fix links
+%% \hypersetup{colorlinks}
+
+%% \def\cpp{C\texttt{++}\ }
+\def\cpp{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+\def\lildot{$\cdot$ }
+% END RESUME DEFINITIONS
+
+\setstretch{0.95}
+
+\begin{document}
+
+\small
+\smallskip
+\vspace*{-44pt}
+
+\contact{FIRST LAST}
+        {\href{PHONE NUMBER LINK}{PHONE NUMBER} $\bullet$
+        \mailto{EMAIL ADDRESS} $\bullet$
+        \href{GITHUB URL}{GITHUB} $\bullet$
+        \href{WEB URL}{WEBSITE}}
+
+\header{Education}
+
+\schoolwithcourses{UNIVERSITY NAME}{UNIVERSITY LOCATION}{BSCS}
+                  {}{Class of 2018}
+        \area{Relevant Coursework}{ LIST \lildot SOME
+        \lildot CLASSES \lildot HERE \lildot blah \lildot blah \lildot blah
+        blah blah blah \lildot this spacing system must die}
+        \area{Relevant Projects}{ School \lildot Projects \lildot Here \lildot
+        ugh I can't believe I need to fill this out to look good}
+        \area{Relevant Achievements}{ Achievements \lildot Here \lildot AND
+        HERE TOO?? \lildot blah blah \lildot blah}
+
+\header{Experience}
+\employer{COMPANY NAME}{COMPANY LOCATION}{Software Engineering Intern}{TERM YEAR}
+        \begin{achievements}
+        \item List some experience here
+        \item List some experience here
+        \item List some experience here
+        \end{achievements}
+\employer{COMPANY NAME}{COMPANY LOCATION}{Software Engineering Intern}{TERM YEAR}
+        \begin{achievements}
+        \item List some experience here
+        \item List some experience here
+        \item List some experience here
+        \end{achievements}
+\employer{COMPANY NAME}{COMPANY LOCATION}{Software Engineering Intern}{TERM YEAR}
+        \begin{achievements}
+        \item List some experience here
+        \item List some experience here
+        \item List some experience here
+        \end{achievements}
+\employer{COMPANY NAME}{COMPANY LOCATION}{Software Engineering Intern}{TERM YEAR}
+        \begin{achievements}
+        \item List some experience here
+        \item List some experience here
+        \item List some experience here
+        \end{achievements}
+\employer{COMPANY NAME}{COMPANY LOCATION}{Software Engineering Intern}{TERM YEAR}
+        \begin{achievements}
+        \item List some experience here
+        \item List some experience here
+        \item List some experience here
+        \end{achievements}
+
+\header{Projects}
+        \begin{achievements}
+        \item {\bf PROJECT NAME} \lildot LANG USED
+            \fillpullright {\it WHERE TO FIND} \\
+            Your description goes here, duh 
+            Your description goes here, duh 
+            Your description goes here, duh 
+        \item {\bf PROJECT NAME} \lildot LANG USED
+            \fillpullright {\it WHERE TO FIND} \\
+            Your description goes here, duh 
+            Your description goes here, duh 
+            Your description goes here, duh 
+        \item {\bf PROJECT NAME} \lildot LANG USED
+            \fillpullright {\it WHERE TO FIND} \\
+            Your description goes here, duh 
+            Your description goes here, duh 
+            Your description goes here, duh 
+        \item {\bf PROJECT NAME} \lildot LANG USED
+            \fillpullright {\it WHERE TO FIND} \\
+            Your description goes here, duh 
+            Your description goes here, duh 
+            Your description goes here, duh 
+        \end{achievements}
+
+\header{Skills}
+        \begin{achievements}
+        \item {\bf Programming Languages} C \lildot \cpp\ \lildot OCaml \lildot
+            Haskell \lildot SML \lildot Ruby \lildot Python \lildot JavaScript
+        \item {\bf Software} Apache \lildot NGINX \lildot MySQL \lildot
+            PostgreSQL \lildot Git \lildot Cron \lildot Ruby on Rails \lildot
+            Jekyll
+        \item {\bf Other} Digital and film photography \lildot road biking
+            \lildot cooking \lildot German \lildot Spanish
+        \end{achievements}
+
+\end{document}
